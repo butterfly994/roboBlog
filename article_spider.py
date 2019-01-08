@@ -68,7 +68,6 @@ class ArticlesSpider(scrapy.Spider):
                 text = re.sub('Illustrations:.*', '', text)
                 text = re.sub('Photo:.*', '', text)
                 text = re.sub('Photo by.*', '', text)
-                text = re.sub('\d\.', '', text)
                 text = re.sub('\[\d\]', '', text)
                 text = re.sub('\(\d\)', '', text)
                 text = re.sub('\d\)', '', text)
