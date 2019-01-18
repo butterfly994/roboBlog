@@ -25,8 +25,7 @@ class ArticlesSpider(scrapy.Spider):
         sections = response.css('.o')
         for i in range(6, 34, 3):
             soup = BeautifulSoup(sections[i].extract(), 'html.parser')
-            linkEnd = soup.a.get('href')
-            fullLink = 'https://medium.com' + linkEnd
+            fullLink = soup.a.get('href')
             yield response.follow(fullLink, callback=self.parseArticles)
 
 
